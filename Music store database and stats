@@ -1,0 +1,25 @@
+
+--Create a music store database
+CREATE TABLE Store_Inventory (ID integer primary key, Name TEXT, Brand TEXT, Price INTEGER, Level INTEGER);
+
+INSERT INTO Store_Inventory VALUES (1, "Guitar", "Carvin","200", 5);
+INSERT INTO Store_Inventory VALUES (2, "Guitar", "Fender", "100", 3);
+INSERT INTO Store_Inventory VALUES (3, "Guitar", "Ibanez", "150", 4);
+INSERT INTO Store_Inventory VALUES (4, "Guitar", "Gibson", "300", 5);
+INSERT INTO Store_Inventory VALUES (5, "Guitar", "Epiphone", "750", 2);
+INSERT INTO Store_Inventory VALUES (6, "Guitar", "Epiphone SG", "750", 2);
+INSERT INTO Store_Inventory VALUES (7, "Guitar", "Shecter", "500", 2);
+INSERT INTO Store_Inventory VALUES (8, "Guitar", "Squier", "500", 2);
+INSERT INTO Store_Inventory VALUES (9, "Guitar", "Squier Lefty", "500", 2);
+INSERT INTO Store_Inventory VALUES (10, "Guitar", "Gretsch", "900", 4);
+INSERT INTO Store_Inventory VALUES (11, "Guitar", "Jackson", "450", 3);
+INSERT INTO Store_Inventory VALUES (12, "Guitar", "Jackson L", "450", 3);
+INSERT INTO Store_Inventory VALUES (13, "Guitar", "Flying V", "300", 3);
+INSERT INTO Store_Inventory VALUES (14, "Guitar", "Gretsch L", "500", 4);
+INSERT INTO Store_Inventory VALUES (15, "Guitar", "Carvin L", "200", 4);
+
+--display the database ordered by price.
+SELECT * From Store_Inventory Order by price;
+
+--what is the total price of all items in the inventory?
+SELECT SUM(Price) FROM Store_Inventory
