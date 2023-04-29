@@ -1,3 +1,6 @@
+# In this project, I downloaded data from Kaggle containing KPIs on the top 50 tracks of 2022.
+# I created a table to insert the data, imported the data, and performed some analyzations.
+
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
@@ -18,14 +21,20 @@ tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL );
     
+# This query identifies how many tracks were in a meter fewer than 4/4
+
 select artist_name, track_name, time_signature 
 from spotifydata
 where time_signature <4
 group by artist_name ;
 
+# This query shows an example of how many tracks are in the data set by a single artist
+
 select count(track_id) songs, artist_name
 from spotifydata
 where artist_name like'%doja%';
+
+# This query identifies the average tempo of a track with great popularity.
 
 select count(popularity)as above_90_pop, avg(tempo) as tempo
 from spotifydata
